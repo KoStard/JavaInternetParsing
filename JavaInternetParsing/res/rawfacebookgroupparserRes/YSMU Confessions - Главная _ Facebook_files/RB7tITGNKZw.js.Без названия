@@ -1,3 +1,0 @@
-if (self.CavalryLogger) { CavalryLogger.start_js(["HQ2Te"]); }
-
-__d("VideoScrollTracker",["Scroll"],(function(a,b,c,d,e,f){"use strict";__p&&__p();function a(a){this.$2=-1,this.$3=!1,this.$4=a}a.prototype.$5=function(){return this.$4?b("Scroll").getTop(this.$4):null};a.prototype.onScroll=function(){if(this.$3){var a=this.$5();a!==null&&a!==undefined&&(this.$1=a<this.$2?"up":"down",this.$6(a))}};a.prototype.$6=function(a){this.$2=a};a.prototype.start=function(){this.$3=!0;var a=this.$5();a!==null&&a!==undefined&&this.$6(a)};a.prototype.stop=function(){this.$3=!1};a.prototype.getLastScrollDirection=function(){return this.$1};a.prototype.destroy=function(){this.stop(),this.$4=null};e.exports=a}),null);

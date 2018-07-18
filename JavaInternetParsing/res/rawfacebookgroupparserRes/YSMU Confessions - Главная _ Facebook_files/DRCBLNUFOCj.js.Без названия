@@ -1,3 +1,0 @@
-if (self.CavalryLogger) { CavalryLogger.start_js(["uaZnk"]); }
-
-__d("XPagesVideoListsController",["XController"],(function(a,b,c,d,e,f){e.exports=b("XController").create("/pages/video_lists/",{page_id:{type:"FBID",required:!0}})}),null);
