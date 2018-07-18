@@ -1,0 +1,3 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["PGIVD"]); }
+
+__d("AdsUEditorCampaignPromotedObjectCreateOfferDataActionPlugin",[],(function(a,b,c,d,e,f){"use strict";a={key:"AdsUEditorCampaignPromotedObjectCreateOffer",actionType:"ADS_CAMPAIGN_EDITOR_PROMOTED_OBJECT_CREATE_OFFER"};e.exports=a}),null);
