@@ -13,26 +13,26 @@ import universals.Universals;
 public class MenuAmParser {
 	public MenuAmParser() throws Exception {
 //		For parcing the restaurants list
-		new RestaurantsListParser("https://www.menu.am/yerevan/delivery/restaurant/type.html?status=all&sort=default", "res/Restaurants.xls");
+		new RestaurantsListParser("https://www.menu.am/yerevan/delivery/restaurant/type.html?status=all&sort=default", "res/menuamparserRes/Restaurants.xls");
 		
 		
 //		For sorting restaurants list
 		
-//		Cell[][] data = Universals.getData("res/Հայկական.xls");
+//		Cell[][] data = Universals.getData("res/menuamparserRes/Հայկական.xls");
 //		Cell[] headers = data[0];
 //		Cell[][] clearData = Arrays.copyOfRange(data, 1, data.length);
 //		Arrays.sort(clearData, new SortRowsByNthElement(2, true));
-//		Universals.exportData(ArrayUtils.addAll(new Cell[][] {headers}, clearData), "res/ՀայկականSortedByNotes.xls");
+//		Universals.exportData(ArrayUtils.addAll(new Cell[][] {headers}, clearData), "res/menuamparserRes/ՀայկականSortedByNotes.xls");
 		
 //		For parsing the menu
-//		parseMenu("res/Restaurants.xls", "res/AllWithURLs.xls");
+//		parseMenu("res/menuamparserRes/Restaurants.xls", "res/menuamparserRes/AllWithURLs.xls");
 		
 
-		Cell[][] data = Universals.getData("res/Restaurants.xls");
+		Cell[][] data = Universals.getData("res/menuamparserRes/Restaurants.xls");
 		for (int i = 1; i < data.length; i++) {
 			data[i][5].setCellValue("https://www.menu.am" + (data[i][5].getStringCellValue()).replaceAll("/yerevan/restaurant/", "/yerevan/delivery/restaurant/"));
 		}
-		Universals.exportData(data, "res/RestaurantsCorrect.xls");
+		Universals.exportData(data, "res/menuamparserRes/RestaurantsCorrect.xls");
 		
 	}
 	

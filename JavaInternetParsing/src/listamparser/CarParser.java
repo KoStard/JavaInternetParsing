@@ -34,7 +34,6 @@ public class CarParser {
 		int currentIndex = 1;
 		int maxIndex = 250;
 		
-//		String fileName = "res/data.xls";
 		HSSFWorkbook workbook = new HSSFWorkbook();
 		HSSFSheet sheet = workbook.createSheet();
 		HSSFRow header = sheet.createRow(0);

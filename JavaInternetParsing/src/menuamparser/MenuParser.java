@@ -39,7 +39,7 @@ public class MenuParser {
 	}
 	public static void parseMenu(String restaurantName, String URL, Sheet sheet) throws Exception {
 		Document doc = Jsoup.connect(URL).get();
-//		FileWriter fw = new FileWriter(new File("res/doc.html"));
+//		FileWriter fw = new FileWriter(new File("res/menuamparserRes/doc.html"));
 //		fw.write(doc.html());
 //		fw.close();
 //		return;
@@ -51,7 +51,7 @@ public class MenuParser {
 //			String sectionTitle = section.child(1).text();
 		
 		
-		FileWriter fw = new FileWriter(new File("res/errorLog.html"));
+		FileWriter fw = new FileWriter(new File("res/menuamparserRes/errorLog.html"));
 		for (Element product : doc.getElementsByClass("product")) {
 			try {
 			product = product.child(0);

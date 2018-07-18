@@ -18,8 +18,8 @@ import universals.Universals;
 
 public class FromFile {
 	public static void main(String[] args) throws Exception{
-//		String[] res = getPostTextsFromFile("res/YSMU Confessions - Главная _ Facebook.html");
-		String[] lines = Universals.readStringsFromFile("res/output.txt");
+//		String[] res = getPostTextsFromFile("res/YSMU Confessions - Главная _ Facebook.html"); - This line will not work, because the file was compressed
+		String[] lines = Universals.readStringsFromFile("res/rawfacebookgroupparserRes/output.txt");
 		HSSFWorkbook workbook = new HSSFWorkbook();
 		Sheet sheet = workbook.createSheet();
 		Pattern pattern = Pattern.compile("^\\s*#(\\d+) ([\\s\\S]+)$");
@@ -33,7 +33,7 @@ public class FromFile {
 			row.createCell(0).setCellValue(index);
 			row.createCell(1).setCellValue(content);
 		}
-		FileOutputStream fileout = new FileOutputStream(new File("res/confessions.xls"));
+		FileOutputStream fileout = new FileOutputStream(new File("res/rawfacebookgroupparserRes/confessions.xls"));
 		workbook.write(fileout);
 		fileout.close();
 		workbook.close();
