@@ -26,14 +26,14 @@ public class SortRowsByNthElement implements Comparator<Cell[]>{
         	if (index == 0 && b[index].getCellTypeEnum() != CellType.STRING) {
         		return smaller;
         	}
-        	String[] temp = new String[] {a[index].getStringCellValue(), b[index].getStringCellValue()};
-        	Arrays.sort(temp);
-            return (temp[1] == a[index].getStringCellValue()?bigger:smaller);
+//        	String[] temp = new String[] {a[index].getStringCellValue(), b[index].getStringCellValue()};
+//        	Arrays.sort(temp);
+            return a[index].getStringCellValue().compareTo(b[index].getStringCellValue())*bigger;
         case NUMERIC:
             if (DateUtil.isCellDateFormatted(a[index])) {
-            	Date[] temp1 = new Date[] {a[index].getDateCellValue(), b[index].getDateCellValue()};
-            	Arrays.sort(temp1);
-                return (temp1[1] == a[index].getDateCellValue()?bigger:smaller);
+//            	Date[] temp1 = new Date[] {a[index].getDateCellValue(), b[index].getDateCellValue()};
+//            	Arrays.sort(temp1);
+                return a[index].getDateCellValue().compareTo(b[index].getDateCellValue())*bigger;
             } else {
 				if (b[index].getCellTypeEnum() == CellType.STRING) {
             		return bigger;
@@ -41,9 +41,10 @@ public class SortRowsByNthElement implements Comparator<Cell[]>{
             	return (a[index].getNumericCellValue() - b[index].getNumericCellValue()>0?bigger:smaller);
             }
         case FORMULA:
-        	String[] temp3 = new String[] {a[index].getCellFormula(), b[index].getCellFormula()};
-        	Arrays.sort(temp3);
-        	return (temp3[1] == a[index].getStringCellValue()?bigger:smaller);
+//        	String[] temp3 = new String[] {a[index].getCellFormula(), b[index].getCellFormula()};
+//        	Arrays.sort(temp3);
+//        	return (temp3[1] == a[index].getStringCellValue()?bigger:smaller);
+        	return a[index].getStringCellValue().compareTo(b[index].getStringCellValue())*bigger;
         case BLANK:
         	return bigger;
         default:
